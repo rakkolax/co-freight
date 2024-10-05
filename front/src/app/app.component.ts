@@ -20,15 +20,86 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.items = [
       {
+        label: '',
+        icon: 'pi',
+        routerLink: '/'
+      },
+      {
+        label: '',
+        icon: 'pi',
+        routerLink: '/'
+      },
+      {
+        label: '',
+        icon: 'pi',
+        routerLink: '/'
+      },
+      {
+        label: '',
+        icon: 'pi',
+        routerLink: '/'
+      },
+      {
+        label: '',
+        icon: 'pi',
+        routerLink: '/'
+      },
+      {
+        label: '',
+        icon: 'pi',
+        routerLink: '/'
+      },
+      {
+        label: '',
+        icon: 'pi',
+        routerLink: '/'
+      },
+      {
+        label: '',
+        icon: 'pi',
+        routerLink: '/'
+      },
+      {
+        label: '',
+        icon: 'pi',
+        routerLink: '/'
+      },
+      {
+        label: '',
+        icon: 'pi',
+        routerLink: '/'
+      },
+      {
+        label: '',
+        icon: 'pi',
+        routerLink: '/'
+      },
+      {
         label: 'Home',
         icon: 'pi pi-home',
         routerLink: '/'
       },
       {
-        label: 'Dealer',
+        label: 'Booking',
         icon: 'pi pi-file-edit',
+        routerLink: '/'
+      },
+      {
+        label: 'Agreements',
+        icon: 'pi pi-copy',
         routerLink: '/dealer-list'
-      }]
+      },
+      {
+        label: 'About Us',
+        icon: 'pi pi-user',
+        routerLink: '/'
+      },
+      {
+        label: 'FAQ',
+        icon: 'pi pi-question-circle',
+        routerLink: '/'
+      }
+    ]
   }
 
 

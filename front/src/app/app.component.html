@@ -27,30 +27,35 @@
 </div>-->
 
 
-  <p-menubar [model]="items">
-    <ng-template pTemplate="start">
-      <img src="assets/icons/logo.png" width="80x">
-    </ng-template>
-    <div class="row row justify-content-center">
-      <ng-template pTemplate="item" let-item let-root="root">
-        <div class="col-2">
-        <a style="padding-top: 25%;" pRipple class="flex align-items-center p-menuitem-link"
-           [routerLink]="item.routerLink">
-          <span [class]="item.icon"></span>
-          <span class="ml-2">{{ item.label }}</span>
-        </a>
-        </div>
-      </ng-template>
-    </div>
-    <ng-template pTemplate="end">
-      <div class="flex align-items-center gap-2">
-        <input type="text" pInputText placeholder="Search" class="w-8rem sm:w-auto" />
-    <!--    <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />-->
-      </div>
-    </ng-template>
-  </p-menubar>
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <img src="assets/icons/logo.png" width="80">
+  </ng-template>
 
-<div style="padding-top: 50px; margin: 0 2% 0 2%">
+  <div style="flex-grow: 1; display: flex; justify-content: center;">
+    <ng-template pTemplate="item" let-item let-root="root">
+      <a style="padding-top: 25%; padding-left:30%; margin: 0 15px;" pRipple class="flex align-items-center p-menuitem-link"
+         [routerLink]="item.routerLink">
+        <span [class]="item.icon"></span>
+        <span class="ml-2">{{ item.label }}</span>
+      </a>
+    </ng-template>
+  </div>
+
+  <ng-template pTemplate="end">
+    <div class="flex align-items-center gap-2" style="padding-right: 100px;">
+      <input type="text" pInputText placeholder="Search" class="w-8rem sm:w-auto" style="margin-right: 40px;"/>
+      <img src="assets/icons/people.jpg" width="60" >
+      <!--       <img src="assets/icons/tklogo.png" width="60" > -->
+      <!-- <img src="assets/icons/tklogo.png" width="60" > -->
+      <!-- <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" /> -->
+    </div>
+  </ng-template>
+</p-menubar>
+
+
+<!-- TODO: Open here for other pages <div style="padding-top: 50px; margin: 0 2% 0 2%">-->
+<div style="margin: 0 2% 0 2%">
   <router-outlet/>
 </div>
 
@@ -67,21 +72,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
