@@ -17,27 +17,39 @@ export class ListFlightComponent implements OnInit{
     this.flightOptions = [
       {
         companyName: 'Turkish Cargo',
-        price: 120,
-        date: '10.10.2024',
-        src:'assets/icons/flightmenu.png'
+        rate: 7,
+        price: 3500,
+        date: '06.10.2024',
+        src:'assets/icons/flightmenu.png',
+        duration:'36h 20m',
+        emission:'2'
       },
       {
         companyName: 'Turkish Cargo',
-        price: 160,
-        date: '11.10.2024',
-        src:'assets/icons/flightmenu2.png'
+        rate: 8,
+        price: 4000,
+        date: '06.10.2024',
+        src:'assets/icons/flightmenu2.png',
+        duration:'32h 45m',
+        emission:'4'
       },
       {
         companyName: 'Qatar Cargo',
-        price: 140,
-        date: '11.10.2024',
-        src:'assets/icons/flightmenu3.png'
+        rate: 11,
+        price: 5500,
+        date: '06.10.2024',
+        src:'assets/icons/flightmenu3.png',
+        duration:'33h 40m',
+        emission:'3'
       },
       {
         companyName: 'Lutfansa Cargo',
-        price: 125,
-        date: '11.10.2024',
-        src:'assets/icons/flightmenu4.png'
+        rate: 8,
+        price: 4000,
+        date: '06.10.2024',
+        src:'assets/icons/flightmenu4.png',
+        duration:'32h 45m',
+        emission:'4'
       }
     ];
   }
@@ -56,7 +68,10 @@ export class ListFlightComponent implements OnInit{
 
 interface FlightOption {
   companyName: string;
+  rate: number;
   price: number;
   date: string;
   src: string;
+  duration: string;
+  emission:string;
 }

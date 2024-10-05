@@ -48,8 +48,9 @@
   </div>
 
 </p-panel>-->
-
-<label>IST - HGK  10.10.2024</label>
+<div style="text-align: center">
+  <h3>IST - HGK / 06.10.2024 / GEN </h3>
+</div>
 
 <p-table [value]="flightOptions" [tableStyle]="{'min-width': '60rem'}" [styleClass]="'p-datatable-sm'">
   <ng-template pTemplate="caption">
@@ -65,21 +66,23 @@
   </ng-template>
   <ng-template pTemplate="header">
     <tr>
-      <th>Name</th>
-      <th>Image</th>
-      <th>Price</th>
-      <th>Category</th>
-      <th>Reviews</th>
+      <th>Route Details</th>
+      <th>Unit Rate</th>
+      <th>Total Price</th>
+      <th>Flight Date</th>
+      <th>Flight Duration</th>
+      <th>CO2 Emission</th>
       <th></th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-product>
     <tr>
-      <td>{{product.companyName}}</td>
       <td><img [src]="product.src" [alt]="product.name" height="100" class="shadow-4" /></td>
+      <td>{{product.rate | currency:'USD'}}</td>
       <td>{{product.price | currency:'USD'}}</td>
       <td>{{product.date}}</td>
-      <td><p-rating [(ngModel)]="product.price" [readonly]="true" [cancel]="false" /></td>
+      <td>{{product.duration}}</td>
+      <td><p-rating [(ngModel)]="product.emission" [readonly]="true" [cancel]="false" /></td>
 <!--      <td><p-tag [value]="product.price" [severity]="getSeverity(product)" /></td>-->
       <td><p-button label="Book Now" [outlined]="true"  icon="pi pi-shopping-cart" size="small"/></td>
     </tr>

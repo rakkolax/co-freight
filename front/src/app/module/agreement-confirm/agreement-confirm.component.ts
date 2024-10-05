@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ConfirmationService, MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-agreement-confirm',
@@ -6,6 +7,10 @@ import {Component, OnInit} from '@angular/core';
   styleUrl: './agreement-confirm.component.scss'
 })
 export class AgreementConfirmComponent implements OnInit{
+
+  constructor(private confirmationService: ConfirmationService, private messageService: MessageService) {
+  }
+
   agreementText: string | undefined;
 
 
@@ -16,6 +21,18 @@ export class AgreementConfirmComponent implements OnInit{
 
   confirm(){
     console.log(this.agreementText);
+  }
+
+  confirmDelete(event: Event) {
+    this.confirmationService.confirm({
+      target: event.target as EventTarget,
+      message: 'Do you want to reject this agreement?',
+      icon: 'pi pi-info-circle',
+      acceptButtonStyleClass: 'p-button-danger p-button-sm',
+      accept: () => {
+        this.messageService.add({ severity: 'error', summary: 'Rejected', detail: 'You have rejected', life: 3000 });
+      }
+    });
   }
 
 }

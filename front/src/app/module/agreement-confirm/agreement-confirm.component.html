@@ -1,3 +1,5 @@
+<p-toast />
+<p-confirmPopup />
 <div class="card">
   <p-editor [(ngModel)]="agreementText" [style]="{ height: '800px', width: '1000px' }"/>
 </div>
@@ -6,7 +8,7 @@
   <div class="row justify-content-end">
 
     <div style="padding-right: 20px;">
-      <p-button label="Reject" [outlined]="true" severity="danger" icon="pi pi-times-circle" size="small"/>
+      <p-button label="Reject" (click)="confirmDelete($event)" [outlined]="true" severity="danger" icon="pi pi-times-circle" size="small"/>
     </div>
     <div style="padding-right: 20px;">
       <p-button label="Negotiate" [outlined]="true" icon="pi pi-pen-to-square" size="small"/>

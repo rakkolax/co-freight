@@ -40,6 +40,8 @@ import { AgreementDocComponent } from './module/agreement-doc/agreement-doc.comp
 import {EditorModule} from "primeng/editor";
 import { AgreementConfirmComponent } from './module/agreement-confirm/agreement-confirm.component';
 import {CheckboxModule} from "primeng/checkbox";
+import {ConfirmationService, MessageService} from "primeng/api";
+import {ConfirmPopupModule} from "primeng/confirmpopup";
 
 @NgModule({
   declarations: [
@@ -52,43 +54,46 @@ import {CheckboxModule} from "primeng/checkbox";
     AgreementDocComponent,
     AgreementConfirmComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        ButtonModule,
-        MenubarModule,
-        BadgeModule,
-        AvatarModule,
-        InputTextModule,
-        ToastModule,
-        ImageModule,
-        CardModule,
-        FormsModule,
-        InputNumberModule,
-        CalendarModule,
-        InputIconModule,
-        IconFieldModule,
-        DropdownModule,
-        FloatLabelModule,
-        DividerModule,
-        StepsModule,
-        PanelModule,
-        TagModule,
-        TableModule,
-        DataViewModule,
-        RatingModule,
-        ToolbarModule,
-        FieldsetModule,
-        MultiSelectModule,
-        DynamicDialogModule,
-        EditorModule,
-        CheckboxModule
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    MenubarModule,
+    BadgeModule,
+    AvatarModule,
+    InputTextModule,
+    ToastModule,
+    ImageModule,
+    CardModule,
+    FormsModule,
+    InputNumberModule,
+    CalendarModule,
+    InputIconModule,
+    IconFieldModule,
+    DropdownModule,
+    FloatLabelModule,
+    DividerModule,
+    StepsModule,
+    PanelModule,
+    TagModule,
+    TableModule,
+    DataViewModule,
+    RatingModule,
+    ToolbarModule,
+    FieldsetModule,
+    MultiSelectModule,
+    DynamicDialogModule,
+    EditorModule,
+    CheckboxModule,
+    ConfirmPopupModule
 
-    ],
+  ],
   providers: [
     provideAnimationsAsync(),
-    DialogService
+    DialogService,
+    ConfirmationService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
