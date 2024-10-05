@@ -1,0 +1,180 @@
+
+
+  <p-card header="Booking Tracking">
+    <div class="row justify-content-md-center">
+
+      <div class="col-2" style="padding-left: 70px">
+        <p-floatLabel>
+          <input pInputText id="bookingID" [(ngModel)]="bookingID" />
+          <label for="bookingID">Booking ID</label>
+        </p-floatLabel>
+      </div>
+
+      <div class="col-2">
+        <p-button label="Find Booking" [outlined]="true" (click)="btnClick()" icon="pi pi-search" size="small"/>
+      </div>
+    </div>
+  </p-card>
+
+  <p-divider />
+
+  <p-card header="Search Flight">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+
+          <div class="gap-2 p-fluid">
+            <div class="flex-auto">
+              <label for="origin">Origin</label>
+              <input
+                pInputText
+                id="origin"
+                [(ngModel)]="origin"/>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm">
+
+          <div class="gap-2 p-fluid">
+            <div class="flex-auto">
+              <label for="destination">Destination</label>
+              <input
+                pInputText
+                id="destination"
+                [(ngModel)]="destination"/>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm">
+          <div class="gap-2 p-fluid">
+            <div class="flex-auto">
+              <label for="date">Shipping Date</label>
+              <p-calendar
+                [(ngModel)]="date"
+                [iconDisplay]="'input'"
+                [showIcon]="true"
+                id="date"
+                inputId="icondisplay" />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="gap-2 p-fluid">
+            <div class="flex-auto">
+              <label for="commodity">Commodity Code</label>
+              <p-dropdown
+                [options]="commodities"
+                [(ngModel)]="selectedCommodity"
+                [checkmark]="true"
+                optionLabel="name"
+                [showClear]="true"
+                id="commodity"
+                placeholder="Select a Commodity" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row" style="padding-top: 15px">
+
+        <div class="col-sm">
+          <div class="gap-2 p-fluid">
+            <div class="flex-auto">
+              <label for="piece">Piece</label>
+              <p-inputNumber
+                [(ngModel)]="piece"
+                [showButtons]="true"
+                inputId="integeronly"
+                id="piece"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="gap-2 p-fluid">
+            <div class="flex-auto">
+              <label for="width">Width</label>
+              <input
+                pInputText
+                id="width"
+                aria-describedby="username-help"
+                [(ngModel)]="width"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="gap-2 p-fluid">
+            <div class="flex-auto">
+              <label for="length">Length</label>
+              <input
+                pInputText
+                id="length"
+                [(ngModel)]="length"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="gap-2 p-fluid">
+            <div class="flex-auto">
+              <label for="height">Height</label>
+              <input
+                pInputText
+                id="height"
+                [(ngModel)]="height"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="gap-2 p-fluid">
+            <div class="flex-auto">
+              <label for="weight">Weight</label>
+              <input
+                pInputText
+                id="weight"
+                [(ngModel)]="weight"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div style="padding-top: 42px" class="flex align-items-center">
+            <p-checkbox
+              [(ngModel)]="checked"
+              label="Direct Flight"
+              name="pizza"
+              value="Cheese" />
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row" style="padding-top: 15px">
+
+        <div class="col-6">
+
+        </div>
+
+      </div>
+
+      <div class="row justify-content-end">
+
+        <p-button label="Search Flight" [outlined]="true" (click)="listFlight()" icon="pi pi-check" size="small" />
+
+      </div>
+
+
+    </div>
+
+
+  </p-card>
+

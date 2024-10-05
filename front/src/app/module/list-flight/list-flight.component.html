@@ -1,0 +1,92 @@
+<!--
+<p-panel header="Search Flight" [toggleable]="true">
+
+  <div class="row">
+    <div class="col-sm">
+
+      <div class="gap-2 p-fluid">
+        <div class="flex-auto">
+          <label for="origin">Origin</label>
+          <input
+            pInputText
+            disabled
+            id="origin"
+            [(ngModel)]="origin"/>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-sm">
+
+      <div class="gap-2 p-fluid">
+        <div class="flex-auto">
+          <label for="destination">Destination</label>
+          <input
+            pInputText
+            disabled
+            id="destination"
+            [(ngModel)]="destination"/>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-sm">
+      <div class="gap-2 p-fluid">
+        <div class="flex-auto">
+          <label for="date">Flight Date</label>
+          <p-calendar
+            [(ngModel)]="date"
+            [iconDisplay]="'input'"
+            [showIcon]="true"
+            id="date"
+            disabled
+            inputId="icondisplay" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</p-panel>-->
+
+<label>IST - HGK  10.10.2024</label>
+
+<p-table [value]="flightOptions" [tableStyle]="{'min-width': '60rem'}" [styleClass]="'p-datatable-sm'">
+  <ng-template pTemplate="caption">
+    <div class="row justify-content-md-center">
+      <p-button label="Fastest" icon="pi pi-sort-amount-down-alt" [outlined]="true"/>
+      <div style="padding-left: 10px">
+        <p-button label="Cheapest" icon="pi pi-sort-amount-down-alt" [outlined]="true"/>
+      </div>
+      <div style="padding-left: 10px">
+        <p-button label="EcoFly" icon="pi pi-sort-amount-down-alt" [outlined]="true"/>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th>Reviews</th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+    <tr>
+      <td>{{product.companyName}}</td>
+      <td><img [src]="product.src" [alt]="product.name" height="100" class="shadow-4" /></td>
+      <td>{{product.price | currency:'USD'}}</td>
+      <td>{{product.date}}</td>
+      <td><p-rating [(ngModel)]="product.price" [readonly]="true" [cancel]="false" /></td>
+<!--      <td><p-tag [value]="product.price" [severity]="getSeverity(product)" /></td>-->
+      <td><p-button label="Book Now" [outlined]="true"  icon="pi pi-shopping-cart" size="small"/></td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+    <div class="flex align-items-center justify-content-between">
+      In total there are {{flightOptions ? flightOptions.length : 0 }} flights.
+    </div>
+  </ng-template>
+</p-table>
