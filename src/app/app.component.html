@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+</head>
+<body>
+
+<!-- INTERLINE CODES -->
+<!--<div class="card">
+  <p-menubar>
+    <ng-template pTemplate="end">
+      <div class="flex align-items-center gap-2">
+        &lt;!&ndash;        <input type="text" pInputText placeholder="Search" class="w-8rem sm:w-auto" />&ndash;&gt;
+        <img
+          src="assets/icons/tcargo-black.jpg"
+          alt="Image"
+          width="200"/>
+      </div>
+    </ng-template>
+  </p-menubar>
+</div>-->
+
+
+  <p-menubar [model]="items">
+    <ng-template pTemplate="start">
+      <img src="assets/icons/logo.png" width="80x">
+    </ng-template>
+    <div class="row row justify-content-center">
+      <ng-template pTemplate="item" let-item let-root="root">
+        <div class="col-2">
+        <a style="padding-top: 25%;" pRipple class="flex align-items-center p-menuitem-link"
+           [routerLink]="item.routerLink">
+          <span [class]="item.icon"></span>
+          <span class="ml-2">{{ item.label }}</span>
+        </a>
+        </div>
+      </ng-template>
+    </div>
+    <ng-template pTemplate="end">
+      <div class="flex align-items-center gap-2">
+        <input type="text" pInputText placeholder="Search" class="w-8rem sm:w-auto" />
+    <!--    <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />-->
+      </div>
+    </ng-template>
+  </p-menubar>
+
+<div style="padding-top: 50px; margin: 0 2% 0 2%">
+  <router-outlet/>
+</div>
+
+<div style="bottom:0; position: fixed" >
+  <img src="assets/icons/footer3.png">
+</div>
+
+<!-- INTERLINE CODES -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
