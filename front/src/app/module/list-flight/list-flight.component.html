@@ -48,19 +48,41 @@
   </div>
 
 </p-panel>-->
+
+<div class="card flex justify-content-center">
+  <p-toast
+    position="center"
+    key="confirm"
+    (onClose)="onReject()"
+    [baseZIndex]="5000">
+    <ng-template let-message pTemplate="message">
+      <div class="flex flex-column align-items-start" style="flex: 1">
+        <div class="flex align-items-center gap-2">
+          <span class="font-bold text-900">  ABC12345
+                        </span>
+        </div>
+        <div class="font-medium text-lg my-3 text-900">
+          {{ message.summary }}
+        </div>
+        <p-button size="small" label="OK" (onClick)="onConfirm()" />
+      </div>
+    </ng-template>
+  </p-toast>
+</div>
+
 <div style="text-align: center">
-  <h3>IST - HGK / 06.10.2024 / GEN </h3>
+  <h3>HKG-SCL  -  06.10.2024  -  GEN  -  500 KG</h3>
 </div>
 
 <p-table [value]="flightOptions" [tableStyle]="{'min-width': '60rem'}" [styleClass]="'p-datatable-sm'">
   <ng-template pTemplate="caption">
     <div class="row justify-content-md-center">
-      <p-button label="Fastest" icon="pi pi-sort-amount-down-alt" [outlined]="true"/>
+      <p-button label="Fastest" severity="warning" icon="pi pi-sort-amount-down-alt" [outlined]="true"/>
       <div style="padding-left: 10px">
         <p-button label="Cheapest" icon="pi pi-sort-amount-down-alt" [outlined]="true"/>
       </div>
       <div style="padding-left: 10px">
-        <p-button label="EcoFly" icon="pi pi-sort-amount-down-alt" [outlined]="true"/>
+        <p-button label="EcoFly" severity="success" icon="pi pi-sort-amount-down-alt" [outlined]="true"/>
       </div>
     </div>
   </ng-template>
@@ -84,7 +106,7 @@
       <td>{{product.duration}}</td>
       <td><p-rating [(ngModel)]="product.emission" [readonly]="true" [cancel]="false" /></td>
 <!--      <td><p-tag [value]="product.price" [severity]="getSeverity(product)" /></td>-->
-      <td><p-button label="Book Now" [outlined]="true"  icon="pi pi-shopping-cart" size="small"/></td>
+      <td><p-button label="Book Now" (click)="showConfirm()" [outlined]="true"  icon="pi pi-check-circle" size="small"/></td>
     </tr>
   </ng-template>
   <ng-template pTemplate="summary">

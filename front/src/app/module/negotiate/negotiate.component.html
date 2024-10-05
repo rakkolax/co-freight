@@ -1,0 +1,113 @@
+<div class="row">
+  <div class="col">
+    <div class="gap-2 p-fluid">
+      <div class="flex-auto">
+        <label for="validFrom">Valid From</label>
+        <p-calendar
+          [(ngModel)]="validFrom"
+          [iconDisplay]="'input'"
+          [showIcon]="true"
+          id="validFrom"
+          inputId="icondisplay" />
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="gap-2 p-fluid">
+      <div class="flex-auto">
+        <label for="validTo">Valid To</label>
+        <p-calendar
+          [(ngModel)]="validTo"
+          [iconDisplay]="'input'"
+          [showIcon]="true"
+          id="validTo"
+          inputId="icondisplay" />
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="gap-2 p-fluid">
+      <div class="flex-auto">
+        <label for="weightOptions">Interline Weight(Weekly)</label>
+        <p-dropdown
+          [options]="weightOptions"
+          [(ngModel)]="selectedWeightOption"
+          [checkmark]="true"
+          optionLabel="name"
+          [showClear]="true"
+          id="weightOptions"
+          placeholder="Select a Interline Weight(Weekly)"/>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div style="padding-top: 20px" class="row">
+  <div class="col">
+    <div class="gap-2 p-fluid">
+      <div class="flex-auto">
+        <label for="commodity">Weight Break ( kg* )</label>
+        <p-dropdown
+          [options]="weightBreaks"
+          [(ngModel)]="selectedWeightBreak"
+          [checkmark]="true"
+          optionLabel="name"
+          [showClear]="true"
+          id="commodity"
+          placeholder="Select a Weight Break"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="gap-2 p-fluid">
+      <div class="flex-auto">
+        <label for="commodity">Commodity Code</label>
+        <p-multiSelect
+          [options]="commodities"
+          [(ngModel)]="selectedCommodity"
+          optionLabel="name"
+          id="commodity"
+          placeholder="Select a Commodity"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="gap-2 p-fluid">
+      <div class="flex-auto">
+        <label for="weightOptions">Rate Per Kg</label>
+        <p-inputNumber
+          [(ngModel)]="price"
+          [showButtons]="true"
+          inputId="stacked"
+          mode="currency"
+          currency="USD" />
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="gap-2 p-fluid">
+      <div class="flex-auto">
+        <label for="weightOptions">Agreement Type</label>
+        <p-dropdown
+          [options]="agreementTypes"
+          [(ngModel)]="selectedAgreementType"
+          [checkmark]="true"
+          optionLabel="name"
+          [showClear]="true"
+          id="weightOptions"
+          placeholder="Select a Weight Limit"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding-top: 100px; padding-right: 20px;">
+  <div class="row justify-content-center">
+    <p-button label="Send For Negotiate" [outlined]="true" severity="info" icon="pi pi-send"/>
+  </div>
+</div>

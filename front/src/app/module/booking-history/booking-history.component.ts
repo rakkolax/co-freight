@@ -17,7 +17,7 @@ export class BookingHistoryComponent implements OnInit {
     this.historyList = [
       {
         step: 'Booking Creation',
-        date: '01.10.2024',
+        date: '05.10.2024',
         status: 'Done',
         by:'Expeditors',
         origin:"HKG",
@@ -25,15 +25,15 @@ export class BookingHistoryComponent implements OnInit {
       },
       {
         step: 'Shipment Acceptance(ORG)',
-        date: '02.10.2024',
+        date: '06.10.2024',
         status: 'Done',
         by:'HACTL (GHA)',
         origin:"HKG",
         contact:"info@hactl.com"
       },
       {
-        step: 'Flight QR-1234',
-        date: '03.10.2024',
+        step: 'Flight QR-1250',
+        date: '06.10.2024',
         status: 'Progress',
         by:'Qatar Airways',
         origin:"HKG",
@@ -85,7 +85,7 @@ export class BookingHistoryComponent implements OnInit {
         label: 'Shipment Acceptance(ORG)'
       },
       {
-        label: 'Flight QR-1234'
+        label: 'Flight QR-1250'
       },
       {
         label: 'Flight QR-2566'

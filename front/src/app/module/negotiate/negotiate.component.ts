@@ -1,22 +1,17 @@
 import {Component, OnInit} from '@angular/core';
-import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
-import {AgreementDocComponent} from "../agreement-doc/agreement-doc.component";
 
 @Component({
-  selector: 'app-create-agreement',
-  templateUrl: './create-agreement.component.html',
-  styleUrl: './create-agreement.component.scss'
+  selector: 'app-negotiate',
+  templateUrl: './negotiate.component.html',
+  styleUrl: './negotiate.component.scss'
 })
-export class CreateAgreementComponent implements OnInit {
-
-  ref: DynamicDialogRef | undefined;
-
+export class NegotiateComponent implements OnInit{
   origin: string | undefined;
   destination: string | undefined;
   validFrom: Date | undefined;
   validTo: Date | undefined;
+  price: number | undefined;
   airlineCompanies: SelectModel[] | undefined;
-  selectedAirline: SelectModel | undefined;
   commodities: SelectModel[] | undefined;
   selectedCommodity: SelectModel | undefined;
   weightBreaks: SelectModel[] | undefined;
@@ -25,9 +20,8 @@ export class CreateAgreementComponent implements OnInit {
   selectedWeightOption: SelectModel | undefined;
   agreementTypes: SelectModel[] | undefined;
   selectedAgreementType: SelectModel | undefined;
-  price: number | undefined;
 
-  constructor(public dialogService: DialogService) {
+  constructor() {
 
   }
 
@@ -60,11 +54,6 @@ export class CreateAgreementComponent implements OnInit {
       {name: 'Soft SPA', code: '2'}
     ];
   }
-
-  show() {
-    this.ref = this.dialogService.open(AgreementDocComponent, { header: 'Agreement Review'});
-  }
-
 
 }
 

@@ -59,7 +59,7 @@
 
   <div style="padding-top: 32px" class="col-sm-1">
 
-        <p-button label="Search" [outlined]="true" icon="pi pi-search" size="small"/>
+    <p-button label="Search" [outlined]="true" icon="pi pi-search" size="small"/>
 
   </div>
 
@@ -85,27 +85,41 @@
   </ng-template>
   <ng-template pTemplate="header">
     <tr>
-      <th>Company</th>
+      <th>Operating Carrier</th>
+      <th>Marketing Carrier</th>
       <th>Origin</th>
       <th>Destination</th>
-      <th>Weight</th>
-      <th>Flight Number</th>
+      <th>Commodity Codes</th>
+      <th>Weight Break</th>
+      <th>Rate Per Kg</th>
+      <th>Interline Weight(Weekly)</th>
+      <th>Agreement Type</th>
+      <th>Valid From</th>
+      <th>Valid To</th>
       <th>Contact</th>
+
       <th></th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-product>
     <tr>
       <td>{{product.companyName}}</td>
+      <td>{{product.opCarrier}}</td>
       <td>{{product.origin}}</td>
       <td>{{product.destination}}</td>
-      <td>{{product.weight}}</td>
-      <td>{{product.flightNumber}}</td>
+      <td>{{product.commodityCodes}}</td>
+      <td>{{product.weightBreaks}}</td>
+      <td>{{product.ratePerKg}}</td>
+      <td>{{product.interlineWeight}}</td>
+      <td>{{product.agreementType}}</td>
+      <td>{{product.validFrom}}</td>
+      <td>{{product.validTo}}</td>
       <td>{{product.contact}}</td>
+
       <td>
-        <p-button *ngIf="product.status==1" label="Requested" [outlined]="true" [severity]="getSeverity(product.status)"  icon="pi pi-file-edit" size="small"/>
+        <p-button *ngIf="product.status==1" label="Requested" [outlined]="true" (click)="showSingleAgreement()" [severity]="getSeverity(product.status)"  icon="pi pi-file-edit" size="small"/>
         <p-button *ngIf="product.status==2" label="Waiting Approval" (click)="showAgreement()" [outlined]="true" [severity]="getSeverity(product.status)"  icon="pi pi-clock" size="small"/>
-        <p-button *ngIf="product.status==3" label="Signed" [outlined]="true" [severity]="getSeverity(product.status)"  icon="pi pi-file-check" size="small"/>
+        <p-button *ngIf="product.status==3" label="Signed" [outlined]="true" (click)="showSingleAgreement()" [severity]="getSeverity(product.status)"  icon="pi pi-file-check" size="small"/>
       </td>
     </tr>
   </ng-template>

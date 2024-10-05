@@ -104,7 +104,7 @@
     <div class="col">
       <div class="gap-2 p-fluid">
         <div class="flex-auto">
-          <label for="weightOptions">Weight Limit</label>
+          <label for="weightOptions">Interline Weight(Weekly)</label>
           <p-dropdown
             [options]="weightOptions"
             [(ngModel)]="selectedWeightOption"
@@ -112,7 +112,21 @@
             optionLabel="name"
             [showClear]="true"
             id="weightOptions"
-            placeholder="Select a Weight Limit"/>
+            placeholder="Select a Interline Weight(Weekly)"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="gap-2 p-fluid">
+        <div class="flex-auto">
+          <label for="weightOptions">Rate Per Kg</label>
+          <p-inputNumber
+            [(ngModel)]="price"
+            [showButtons]="true"
+            inputId="stacked"
+            mode="currency"
+            currency="USD" />
         </div>
       </div>
     </div>
@@ -135,9 +149,11 @@
 
   </div>
 
-  <div style="padding-top: 20px; padding-right: 20px" class="row justify-content-end">
-
-    <p-button label="Create Agreement" [outlined]="true" (click)="show()"  icon="pi pi-check" size="small" />
+  <div style="padding-top: 20px; padding-right: 20px" class="row justify-content-between">
+    <div style="padding-left: 20px">
+      <p-button label="Upload Draft" [outlined]="true" icon="pi pi-upload" size="small"/>
+    </div>
+    <p-button label="Create Agreement" [outlined]="true" (click)="show()" icon="pi pi-check" size="small"/>
 
   </div>
 

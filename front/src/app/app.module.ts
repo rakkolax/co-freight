@@ -42,6 +42,9 @@ import { AgreementConfirmComponent } from './module/agreement-confirm/agreement-
 import {CheckboxModule} from "primeng/checkbox";
 import {ConfirmationService, MessageService} from "primeng/api";
 import {ConfirmPopupModule} from "primeng/confirmpopup";
+import {FileUploadModule} from "primeng/fileupload";
+import { NegotiateComponent } from './module/negotiate/negotiate.component';
+import { SignedAgrComponent } from './module/signed-agr/signed-agr.component';
 
 @NgModule({
   declarations: [
@@ -52,43 +55,46 @@ import {ConfirmPopupModule} from "primeng/confirmpopup";
     DealerListComponent,
     CreateAgreementComponent,
     AgreementDocComponent,
-    AgreementConfirmComponent
+    AgreementConfirmComponent,
+    NegotiateComponent,
+    SignedAgrComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    ButtonModule,
-    MenubarModule,
-    BadgeModule,
-    AvatarModule,
-    InputTextModule,
-    ToastModule,
-    ImageModule,
-    CardModule,
-    FormsModule,
-    InputNumberModule,
-    CalendarModule,
-    InputIconModule,
-    IconFieldModule,
-    DropdownModule,
-    FloatLabelModule,
-    DividerModule,
-    StepsModule,
-    PanelModule,
-    TagModule,
-    TableModule,
-    DataViewModule,
-    RatingModule,
-    ToolbarModule,
-    FieldsetModule,
-    MultiSelectModule,
-    DynamicDialogModule,
-    EditorModule,
-    CheckboxModule,
-    ConfirmPopupModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        ButtonModule,
+        MenubarModule,
+        BadgeModule,
+        AvatarModule,
+        InputTextModule,
+        ToastModule,
+        ImageModule,
+        CardModule,
+        FormsModule,
+        InputNumberModule,
+        CalendarModule,
+        InputIconModule,
+        IconFieldModule,
+        DropdownModule,
+        FloatLabelModule,
+        DividerModule,
+        StepsModule,
+        PanelModule,
+        TagModule,
+        TableModule,
+        DataViewModule,
+        RatingModule,
+        ToolbarModule,
+        FieldsetModule,
+        MultiSelectModule,
+        DynamicDialogModule,
+        EditorModule,
+        CheckboxModule,
+        ConfirmPopupModule,
+        FileUploadModule
 
-  ],
+    ],
   providers: [
     provideAnimationsAsync(),
     DialogService,

@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
 import {AgreementDocComponent} from "../agreement-doc/agreement-doc.component";
 import {AgreementConfirmComponent} from "../agreement-confirm/agreement-confirm.component";
+import {SignedAgrComponent} from "../signed-agr/signed-agr.component";
 
 @Component({
   selector: 'app-dealer-list',
@@ -22,88 +23,90 @@ export class DealerListComponent implements OnInit {
   weightBreaks: DropdownModel[] | undefined;
   selectedWeightBreak: DropdownModel | undefined;
 
+
+
+
   constructor(private router: Router, public dialogService: DialogService) {
     this.dealerList = [
       {
-        companyName: 'Turkish Cargo',
-        origin: 'IST',
-        destination: 'HXZ',
-        weight: '1000',
-        flightNumber: 'TK-2234',
-        contact: 'rkolan@gmail.com',
+        companyName: 'Air Premia',
+        opCarrier: 'Turkish Airlines',
+        airlinePrefixCode: 'YP-350',
+        origin: 'ICN',
+        destination: 'NRT',
+        commodityCodes: 'GEN,VUN,PER',
+        weightBreaks: '1000',
+        ratePerKg: '1.00 $',
+        interlineWeight: '10.000 kg',
+        agreementType: 'Hard SPA',
+        validFrom: '02-SEP-2024',
+        validTo: '31-DEC-2024',
+        contact: 'info@airpremia.com',
         status: 1
       },
       {
-        companyName: 'Turkish Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
+        companyName: 'Vietnam Airlines JSC',
+        opCarrier: 'Turkish Airlines',
+        airlinePrefixCode: 'VN-738',
+        origin: 'HAN',
+        destination: 'NRT',
+        commodityCodes: 'GEN,VUN,PER',
+        weightBreaks: '1000',
+        ratePerKg: '1.10 $',
+        interlineWeight: '20.000 kg',
+        agreementType: 'Hard SPA',
+        validFrom: '06-OCT-2024',
+        validTo: '31-OCT-2024',
+        contact: 'info@vietnamairlines.com',
         status: 2
       },
       {
-        companyName: 'Qatar Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
+        companyName: 'Nepal Airlines',
+        opCarrier: 'Turkish Airlines',
+        airlinePrefixCode: '285-RA',
+        origin: 'KTM',
+        destination: 'NRT',
+        commodityCodes: 'GEN',
+        weightBreaks: '1000',
+        ratePerKg: '1.60 $',
+        interlineWeight: '8.000 kg',
+        agreementType: 'Soft SPA',
+        validFrom: '02-OCT-2024',
+        validTo: '13-DEC-2024',
+        contact: 'info@nepalairlines.com',
         status: 1
       },
       {
-        companyName: 'Lutfansa Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
+        companyName: 'Turkish Airlines',
+        opCarrier: 'Qatar Airways',
+        airlinePrefixCode: '933-KZ',
+        origin: 'IST',
+        destination: 'SCL',
+        commodityCodes: 'GEN',
+        weightBreaks: '1000',
+        ratePerKg: '3.00 $',
+        interlineWeight: 'Subject to Space',
+        agreementType: 'Soft SPA',
+        validFrom: '06-OCT-2024',
+        validTo: '31-OCT-2024',
+        contact: 'info@qatarairways.com',
         status: 3
       },
       {
-        companyName: 'Turkish Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
+        companyName: 'Avianca Airlines',
+        opCarrier: 'Turkish Airlines',
+        airlinePrefixCode: '289-OM',
+        origin: 'BOG',
+        destination: 'LAX',
+        commodityCodes: 'GEN',
+        weightBreaks: '1000',
+        ratePerKg: '1.40 $',
+        interlineWeight: 'Subject to Space',
+        agreementType: 'Soft SPA',
+        validFrom: '17-SEP-2024',
+        validTo: '27-OCT-2024',
+        contact: 'info@avianca.com',
         status:2
-      },
-      {
-        companyName: 'Turkish Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
-        status: 1
-      },
-      {
-        companyName: 'Qatar Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
-        status: 2
-      },
-      {
-        companyName: 'Lutfansa Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
-        status:3
-      },
-      {
-        companyName: 'Turkish Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
-        status: 1
       }
     ];
   }
@@ -126,85 +129,84 @@ export class DealerListComponent implements OnInit {
   getDealerList(){
     this.dealerList = [
       {
-        companyName: 'Turkish Cargo',
-        origin: 'IST',
-        destination: 'HXZ',
-        weight: '1000',
-        flightNumber: 'TK-2234',
-        contact: 'rkolan@gmail.com',
+        companyName: 'Air Premia',
+        opCarrier: 'Turkish Airlines',
+        airlinePrefixCode: 'YP-350',
+        origin: 'ICN',
+        destination: 'NRT',
+        commodityCodes: 'GEN,VUN,PER',
+        weightBreaks: '1000',
+        ratePerKg: '1.00 $',
+        interlineWeight: '10.000 kg',
+        agreementType: 'Hard SPA',
+        validFrom: '02-SEP-2024',
+        validTo: '31-DEC-2024',
+        contact: 'info@airpremia.com',
         status: 1
       },
       {
-        companyName: 'Turkish Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
+        companyName: 'Vietnam Airlines JSC',
+        opCarrier: 'Turkish Airlines',
+        airlinePrefixCode: 'VN-738',
+        origin: 'HAN',
+        destination: 'NRT',
+        commodityCodes: 'GEN,VUN,PER',
+        weightBreaks: '1000',
+        ratePerKg: '1.10 $',
+        interlineWeight: '20.000 kg',
+        agreementType: 'Hard SPA',
+        validFrom: '06-OCT-2024',
+        validTo: '31-OCT-2024',
+        contact: 'info@vietnamairlines.com',
         status: 2
       },
       {
-        companyName: 'Qatar Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
+        companyName: 'Nepal Airlines',
+        opCarrier: 'Turkish Airlines',
+        airlinePrefixCode: '285-RA',
+        origin: 'KTM',
+        destination: 'NRT',
+        commodityCodes: 'GEN',
+        weightBreaks: '1000',
+        ratePerKg: '1.60 $',
+        interlineWeight: '8.000 kg',
+        agreementType: 'Soft SPA',
+        validFrom: '02-OCT-2024',
+        validTo: '13-DEC-2024',
+        contact: 'info@nepalairlines.com',
         status: 1
       },
       {
-        companyName: 'Lutfansa Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
+        companyName: 'Turkish Airlines',
+        opCarrier: 'Qatar Airways',
+        airlinePrefixCode: '933-KZ',
+        origin: 'IST',
+        destination: 'SCL',
+        commodityCodes: 'GEN',
+        weightBreaks: '1000',
+        ratePerKg: '3.00 $',
+        interlineWeight: 'Subject to Space',
+        agreementType: 'Soft SPA',
+        validFrom: '06-OCT-2024',
+        validTo: '31-OCT-2024',
+        contact: 'info@qatarairways.com',
         status: 3
       },
       {
-        companyName: 'Turkish Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
+        companyName: 'Avianca Airlines',
+        opCarrier: 'Turkish Airlines',
+        airlinePrefixCode: '289-OM',
+        origin: 'BOG',
+        destination: 'LAX',
+        commodityCodes: 'GEN',
+        weightBreaks: '1000',
+        ratePerKg: '1.40 $',
+        interlineWeight: 'Subject to Space',
+        agreementType: 'Soft SPA',
+        validFrom: '17-SEP-2024',
+        validTo: '27-OCT-2024',
+        contact: 'info@avianca.com',
         status:2
-      },
-      {
-        companyName: 'Turkish Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
-        status: 1
-      },
-      {
-        companyName: 'Qatar Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
-        status: 2
-      },
-      {
-        companyName: 'Lutfansa Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
-        status:3
-      },
-      {
-        companyName: 'Turkish Cargo',
-        origin: '',
-        destination: '',
-        weight: '',
-        flightNumber: '',
-        contact: '',
-        status: 1
       }
     ];
   }
@@ -231,19 +233,37 @@ export class DealerListComponent implements OnInit {
   showAgreement() {
     this.ref = this.dialogService.open(AgreementConfirmComponent, { header: 'Agreement Confirmation'});
   }
+
+  showSingleAgreement() {
+    this.ref = this.dialogService.open(SignedAgrComponent, { header: 'Agreement Details'});
+  }
+
 }
 
 interface DealerModel {
   companyName: string;
+  opCarrier: string;
+  airlinePrefixCode: string;
   origin: string;
   destination: string;
-  weight: string;
-  flightNumber: string;
+  commodityCodes: string;
+  weightBreaks: string;
+  ratePerKg: string;
+  interlineWeight: string;
+  agreementType: string;
+  validFrom: string;
+  validTo: string;
   contact: string;
   status: number;
 }
 
+
 interface DropdownModel {
   name: string;
   code: string;
+}
+
+interface UploadEvent {
+  originalEvent: Event;
+  files: File[];
 }

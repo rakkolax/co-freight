@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {MessageService} from "primeng/api";
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-list-flight',
@@ -12,8 +14,9 @@ export class ListFlightComponent implements OnInit{
   origin: string = "IST";
   destination: string = "FRA";
   date:string="";
+  visible: boolean = false;
 
-  constructor(private router: Router) {
+  constructor(private messageService: MessageService) {
     this.flightOptions = [
       {
         companyName: 'Turkish Cargo',
@@ -29,7 +32,7 @@ export class ListFlightComponent implements OnInit{
         rate: 8,
         price: 4000,
         date: '06.10.2024',
-        src:'assets/icons/flightmenu2.png',
+        src:'assets/icons/flightmenu5.png',
         duration:'32h 45m',
         emission:'4'
       },
@@ -63,7 +66,23 @@ export class ListFlightComponent implements OnInit{
     }
     return 'warning';
   }
+  onConfirm() {
+    this.messageService.clear('confirm');
+    this.visible = false;
+  }
 
+  onReject() {
+    this.messageService.clear('confirm');
+    this.visible = false;
+  }
+
+  showConfirm() {
+    Swal.fire({
+      title: "Booking created successfully!",
+      text: "Booking ID : HKGSCL23512345678",
+      icon: "success"
+    });
+  }
 }
 
 interface FlightOption {
