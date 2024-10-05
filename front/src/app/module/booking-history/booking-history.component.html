@@ -1,4 +1,4 @@
-<p-card header="Booking Status">
+<p-card header="Booking Tracking">
   <p-steps
     [model]="steps"
     [activeIndex]="active"/>
@@ -12,7 +12,11 @@
     <ng-template pTemplate="header" let-columns>
       <tr>
         <th>Step </th>
+        <th>By </th>
         <th>Date</th>
+        <th>Origin </th>
+        <th>Destination </th>
+        <th>Contact </th>
         <th>Status</th>
       </tr>
     </ng-template>
@@ -22,7 +26,19 @@
           {{history.step}}
         </td>
         <td>
+          {{history.by}}
+        </td>
+        <td>
           {{history.date}}
+        </td>
+        <td>
+          {{history.origin}}
+        </td>
+        <td>
+          {{history.destination}}
+        </td>
+        <td>
+          {{history.contact}}
         </td>
         <td>
           <p-tag [value]="history.status" [severity]="getSeverity(history.status)" />

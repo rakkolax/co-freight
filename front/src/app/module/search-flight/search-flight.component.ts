@@ -12,6 +12,7 @@ export class SearchFlightComponent implements OnInit{
   constructor(private router: Router) { }
 
   origin: string = "";
+  checked: boolean= false;
   destination: string = "";
   width: string = "";
   length: string = "";
@@ -27,9 +28,10 @@ export class SearchFlightComponent implements OnInit{
     this.commodities = [
       { name: 'GEN', code: 'GEN' },
       { name: 'PER', code: 'PER' },
-      { name: 'HUM', code: 'HUM' },
       { name: 'VAL', code: 'VAL' },
-      { name: 'VUN', code: 'VUN' }
+      { name: 'VUN', code: 'VUN' },
+      { name: 'DGR', code: 'DGR' }
+
     ];
 
   }

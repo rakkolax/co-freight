@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
+import {AgreementDocComponent} from "../agreement-doc/agreement-doc.component";
+import {AgreementConfirmComponent} from "../agreement-confirm/agreement-confirm.component";
 
 @Component({
   selector: 'app-dealer-list',
@@ -7,6 +10,8 @@ import {Router} from "@angular/router";
   styleUrl: './dealer-list.component.scss'
 })
 export class DealerListComponent implements OnInit {
+
+  ref: DynamicDialogRef | undefined;
 
   dealerList: DealerModel[];
   origin: string = "";
@@ -17,7 +22,7 @@ export class DealerListComponent implements OnInit {
   weightBreaks: DropdownModel[] | undefined;
   selectedWeightBreak: DropdownModel | undefined;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public dialogService: DialogService) {
     this.dealerList = [
       {
         companyName: 'Turkish Cargo',
@@ -221,6 +226,10 @@ export class DealerListComponent implements OnInit {
 
   routeToNewAgreement() {
     this.router.navigateByUrl("/create-agreement");
+  }
+
+  showAgreement() {
+    this.ref = this.dialogService.open(AgreementConfirmComponent, { header: 'Agreement Confirmation'});
   }
 }
 

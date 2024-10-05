@@ -1,6 +1,6 @@
 
 
-  <p-card header="Query Booking">
+  <p-card header="Booking Tracking">
     <div class="row justify-content-md-center">
 
       <div class="col-2" style="padding-left: 70px">
@@ -52,7 +52,7 @@
         <div class="col-sm">
           <div class="gap-2 p-fluid">
             <div class="flex-auto">
-              <label for="date">Flight Date</label>
+              <label for="date">Shipping Date</label>
               <p-calendar
                 [(ngModel)]="date"
                 [iconDisplay]="'input'"
@@ -143,6 +143,16 @@
                 id="weight"
                 [(ngModel)]="weight"/>
             </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div style="padding-top: 42px" class="flex align-items-center">
+            <p-checkbox
+              [(ngModel)]="checked"
+              label="Direct Flight"
+              name="pizza"
+              value="Cheese" />
           </div>
         </div>
 

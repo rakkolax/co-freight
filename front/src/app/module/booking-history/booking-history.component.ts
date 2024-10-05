@@ -16,29 +16,62 @@ export class BookingHistoryComponent implements OnInit {
   constructor() {
     this.historyList = [
       {
-        step: 'NFR',
+        step: 'Booking Creation',
         date: '01.10.2024',
-        status: 'Done'
+        status: 'Done',
+        by:'Expeditors',
+        origin:"HKG",
+        contact:"info@expeditors.com"
       },
       {
-        step: 'TSI',
+        step: 'Shipment Acceptance(ORG)',
         date: '02.10.2024',
-        status: 'Done'
+        status: 'Done',
+        by:'HACTL (GHA)',
+        origin:"HKG",
+        contact:"info@hactl.com"
       },
       {
-        step: 'DEP',
+        step: 'Flight QR-1234',
         date: '03.10.2024',
-        status: 'Progress'
+        status: 'Progress',
+        by:'Qatar Airways',
+        origin:"HKG",
+        destination:"DOH",
+        contact:"info@qatarairways.com"
       },
       {
-        step: 'ARR',
+        step: 'Flight QR-2566',
         date: '',
-        status: 'Waiting'
+        status: 'Waiting',
+        by:'Qatar Airways',
+        origin:"DOH",
+        destination:"IST",
+        contact:"info@qatarairways.com"
       },
       {
-        step: 'RDY',
+        step: 'Flight TK-1111',
         date: '',
-        status: 'Waiting'
+        status: 'Waiting',
+        by:'Turkish Airlines',
+        origin:"IST",
+        destination:"SCL",
+        contact:"info@turkishcargo.com"
+      },
+      {
+        step: 'Shipment Acceptance(DES)',
+        date: '',
+        status: 'Waiting',
+        by:'SWISSPORT (GHA)',
+        destination:"SCL",
+        contact:"info@swissport.com"
+      },
+      {
+        step: 'Shipment Delivery',
+        date: '',
+        status: 'Waiting',
+        by:'Customer',
+        destination:"SCL"
       }
     ];
   }
@@ -46,19 +79,25 @@ export class BookingHistoryComponent implements OnInit {
   ngOnInit(): void {
     this.steps = [
       {
-        label: 'NFR'
+        label: 'Booking Creation'
       },
       {
-        label: 'TSI'
+        label: 'Shipment Acceptance(ORG)'
       },
       {
-        label: 'DEP'
+        label: 'Flight QR-1234'
       },
       {
-        label: 'ARR'
+        label: 'Flight QR-2566'
       },
       {
-        label: 'RDY'
+        label: 'Flight TK-1111'
+      },
+      {
+        label: 'Shipment Acceptance(DES)'
+      },
+      {
+        label: 'Shipment Delivery'
       }
     ];
   }
@@ -81,5 +120,8 @@ export class BookingHistoryComponent implements OnInit {
 interface BookingHistory {
   step: string;
   date: string;
+  by: string;
+  origin: string;
+  destination: string | undefined;
   status: string;
 }

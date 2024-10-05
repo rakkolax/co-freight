@@ -104,7 +104,7 @@
       <td>{{product.contact}}</td>
       <td>
         <p-button *ngIf="product.status==1" label="Requested" [outlined]="true" [severity]="getSeverity(product.status)"  icon="pi pi-file-edit" size="small"/>
-        <p-button *ngIf="product.status==2" label="Waiting Approval" [outlined]="true" [severity]="getSeverity(product.status)"  icon="pi pi-clock" size="small"/>
+        <p-button *ngIf="product.status==2" label="Waiting Approval" (click)="showAgreement()" [outlined]="true" [severity]="getSeverity(product.status)"  icon="pi pi-clock" size="small"/>
         <p-button *ngIf="product.status==3" label="Signed" [outlined]="true" [severity]="getSeverity(product.status)"  icon="pi pi-file-check" size="small"/>
       </td>
     </tr>

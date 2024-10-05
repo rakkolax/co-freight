@@ -38,6 +38,8 @@ import {MultiSelectModule} from "primeng/multiselect";
 import {DialogService, DynamicDialogModule} from "primeng/dynamicdialog";
 import { AgreementDocComponent } from './module/agreement-doc/agreement-doc.component';
 import {EditorModule} from "primeng/editor";
+import { AgreementConfirmComponent } from './module/agreement-confirm/agreement-confirm.component';
+import {CheckboxModule} from "primeng/checkbox";
 
 @NgModule({
   declarations: [
@@ -47,41 +49,43 @@ import {EditorModule} from "primeng/editor";
     BookingHistoryComponent,
     DealerListComponent,
     CreateAgreementComponent,
-    AgreementDocComponent
+    AgreementDocComponent,
+    AgreementConfirmComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    ButtonModule,
-    MenubarModule,
-    BadgeModule,
-    AvatarModule,
-    InputTextModule,
-    ToastModule,
-    ImageModule,
-    CardModule,
-    FormsModule,
-    InputNumberModule,
-    CalendarModule,
-    InputIconModule,
-    IconFieldModule,
-    DropdownModule,
-    FloatLabelModule,
-    DividerModule,
-    StepsModule,
-    PanelModule,
-    TagModule,
-    TableModule,
-    DataViewModule,
-    RatingModule,
-    ToolbarModule,
-    FieldsetModule,
-    MultiSelectModule,
-    DynamicDialogModule,
-    EditorModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        ButtonModule,
+        MenubarModule,
+        BadgeModule,
+        AvatarModule,
+        InputTextModule,
+        ToastModule,
+        ImageModule,
+        CardModule,
+        FormsModule,
+        InputNumberModule,
+        CalendarModule,
+        InputIconModule,
+        IconFieldModule,
+        DropdownModule,
+        FloatLabelModule,
+        DividerModule,
+        StepsModule,
+        PanelModule,
+        TagModule,
+        TableModule,
+        DataViewModule,
+        RatingModule,
+        ToolbarModule,
+        FieldsetModule,
+        MultiSelectModule,
+        DynamicDialogModule,
+        EditorModule,
+        CheckboxModule
 
-  ],
+    ],
   providers: [
     provideAnimationsAsync(),
     DialogService

@@ -25,10 +25,6 @@ export class AppComponent implements OnInit{
         routerLink: '/'
       },
       {
-        label: 'Features',
-        icon: 'pi pi-star'
-      },
-      {
         label: 'Dealer',
         icon: 'pi pi-file-edit',
         routerLink: '/dealer-list'
