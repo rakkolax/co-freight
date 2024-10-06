@@ -34,15 +34,13 @@ export class CreateAgreementComponent implements OnInit {
   ngOnInit(): void {
     this.airlineCompanies = [
       { name: 'Qatar Airways', code: 'GEN' },
-      { name: 'Lutfansa', code: 'PER' },
-      { name: 'Thai Airways', code: 'HUM' },
-      { name: 'Pegasus Cargo', code: 'VAL' },
-      { name: 'Gotham Airlines', code: 'VUN' }
+      { name: 'Gotham Airlines', code: 'PER' },
+      { name: 'Vietnam Airlines', code: 'HUM' },
+      { name: 'Avianca Airlines', code: 'ABC' }
     ];
     this.commodities = [
       {name: 'GEN', code: 'GEN'},
       {name: 'PER', code: 'PER'},
-      {name: 'HUM', code: 'HUM'},
       {name: 'VAL', code: 'VAL'},
       {name: 'VUN', code: 'VUN'}
     ];

@@ -1,4 +1,19 @@
 <div class="row">
+
+  <div class="col">
+    <div class="gap-2 p-fluid">
+      <div class="flex-auto">
+        <label for="weightOptions">Rate Per Kg</label>
+        <p-inputNumber
+          [(ngModel)]="price"
+          [showButtons]="true"
+          inputId="stacked"
+          mode="currency"
+          currency="USD" />
+      </div>
+    </div>
+  </div>
+
   <div class="col">
     <div class="gap-2 p-fluid">
       <div class="flex-auto">
@@ -75,19 +90,7 @@
     </div>
   </div>
 
-  <div class="col">
-    <div class="gap-2 p-fluid">
-      <div class="flex-auto">
-        <label for="weightOptions">Rate Per Kg</label>
-        <p-inputNumber
-          [(ngModel)]="price"
-          [showButtons]="true"
-          inputId="stacked"
-          mode="currency"
-          currency="USD" />
-      </div>
-    </div>
-  </div>
+
 
   <div class="col">
     <div class="gap-2 p-fluid">

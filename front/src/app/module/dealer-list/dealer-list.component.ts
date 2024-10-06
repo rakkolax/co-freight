@@ -29,11 +29,11 @@ export class DealerListComponent implements OnInit {
   constructor(private router: Router, public dialogService: DialogService) {
     this.dealerList = [
       {
-        companyName: 'Air Premia',
-        opCarrier: 'Turkish Airlines',
-        airlinePrefixCode: 'YP-350',
+        companyName: 'Turkish Airlines',
+        opCarrier: 'Air Premia',
+        airlinePrefixCode: 'TK-350',
         origin: 'ICN',
-        destination: 'NRT',
+        destination: 'FRA',
         commodityCodes: 'GEN,VUN,PER',
         weightBreaks: '1000',
         ratePerKg: '1.00 $',
@@ -106,7 +106,7 @@ export class DealerListComponent implements OnInit {
         validFrom: '17-SEP-2024',
         validTo: '27-OCT-2024',
         contact: 'info@avianca.com',
-        status:2
+        status:3
       }
     ];
   }
@@ -129,11 +129,11 @@ export class DealerListComponent implements OnInit {
   getDealerList(){
     this.dealerList = [
       {
-        companyName: 'Air Premia',
-        opCarrier: 'Turkish Airlines',
-        airlinePrefixCode: 'YP-350',
+        companyName: 'Turkish Airlines',
+        opCarrier: 'Air Premia',
+        airlinePrefixCode: 'TK-350',
         origin: 'ICN',
-        destination: 'NRT',
+        destination: 'FRA',
         commodityCodes: 'GEN,VUN,PER',
         weightBreaks: '1000',
         ratePerKg: '1.00 $',
@@ -206,7 +206,7 @@ export class DealerListComponent implements OnInit {
         validFrom: '17-SEP-2024',
         validTo: '27-OCT-2024',
         contact: 'info@avianca.com',
-        status:2
+        status:3
       }
     ];
   }
